@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnShot: {fileID: 4921702253388999628}
   bullet: {fileID: 7772269601196301920, guid: fbfda66ea2096e044990e629be405713, type: 3}
-  shotForce: 1500
+  shotForce: 10002
   shotRate: 0.5
 --- !u!114 &8862406043110917002
 MonoBehaviour:
