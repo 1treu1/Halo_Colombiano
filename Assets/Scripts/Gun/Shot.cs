@@ -15,8 +15,9 @@ public class Shot : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Fire1")){
-            if(Time.time > shotRateTime)
+            if(Time.time > shotRateTime && GameManager.Instance.gunAmmo > 0)
             {
+                GameManager.Instance.gunAmmo--;
                 GameObject newBullet;
                 newBullet = Instantiate(bullet, spawnShot.position, spawnShot.rotation); //Genera las balas
                 newBullet.GetComponent<Rigidbody>().AddForce(spawnShot.up * shotForce); //Dispara las balas
