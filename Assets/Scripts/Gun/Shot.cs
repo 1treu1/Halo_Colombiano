@@ -19,7 +19,7 @@ public class Shot : MonoBehaviour
             {
                 GameObject newBullet;
                 newBullet = Instantiate(bullet, spawnShot.position, spawnShot.rotation); //Genera las balas
-                newBullet.GetComponent<Rigidbody>().AddForce(spawnShot.forward * shotForce); //Dispara las balas
+                newBullet.GetComponent<Rigidbody>().AddForce(spawnShot.up * shotForce); //Dispara las balas
                 shotRateTime = Time.time + shotRate;
                 Destroy(newBullet, 5f);
             }
