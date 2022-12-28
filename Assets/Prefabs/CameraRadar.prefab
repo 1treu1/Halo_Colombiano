@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4185029806253868953}
   - component: {fileID: 6158384401811120083}
   m_Layer: 0
-  m_Name: CameraRadar_Test
+  m_Name: CameraRadar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
