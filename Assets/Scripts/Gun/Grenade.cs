@@ -9,6 +9,7 @@ public class Grenade : MonoBehaviour
     public float radius = 5;
     public float explosionForce = 70;
     bool exploded = false;
+    public GameObject explosionEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,8 @@ public class Grenade : MonoBehaviour
     }
     void Explode()
     {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         foreach(var rangeObjects in colliders)
         {
@@ -34,8 +37,10 @@ public class Grenade : MonoBehaviour
             if(rb != null)
             {
                 rb.AddExplosionForce(explosionForce * 10, transform.position, radius);
-                Destroy(gameObject);
+                
             }
         }
+        exploded = false;
+        Destroy(gameObject);
     }
 }
