@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1169258364547070074}
+  - component: {fileID: 3653116203111856099}
   - component: {fileID: 1169258364547070076}
   - component: {fileID: 1169258364547070077}
   - component: {fileID: 1029589311}
   - component: {fileID: 1029589310}
-  - component: {fileID: 4830889803360327861}
+  - component: {fileID: 2110497171848292774}
   m_Layer: 6
   m_Name: EnemyIndicator
   m_TagString: Untagged
@@ -21,21 +21,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1169258364547070074
-Transform:
+--- !u!224 &3653116203111856099
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169258364547070075}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 11.659686, y: 11.659686, z: 11.659686}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1169258364855078425}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!33 &1169258364547070076
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -112,19 +117,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
---- !u!65 &4830889803360327861
-BoxCollider:
+--- !u!222 &2110497171848292774
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169258364547070075}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 1.055119, z: -1.65}
-  m_Center: {x: 0, y: 0.02755937, z: -5.2446904e-17}
+  m_CullTransparentMesh: 1
 --- !u!1 &1169258364855078419
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1169258364547070074}
+  - {fileID: 3653116203111856099}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
