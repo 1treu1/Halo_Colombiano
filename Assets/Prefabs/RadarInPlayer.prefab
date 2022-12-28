@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 268855560528514859}
   - component: {fileID: 268855560528514861}
   m_Layer: 6
-  m_Name: RadarInPlayer_Test
+  m_Name: RadarInPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
