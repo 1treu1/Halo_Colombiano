@@ -17,8 +17,16 @@ public class IA : MonoBehaviour
     public float distanceToFollowPath = 2;
     void Start()
     {
-        enemy.destination = nodo[0].position;
-        player = FindObjectOfType<PlayerMovement>().gameObject;
+        if(nodo == null  || nodo.Length == 0)
+        {
+            transform.gameObject.GetComponent<IA>().enabled = false;
+        }
+        else
+        {
+            enemy.destination = nodo[0].position;
+            player = FindObjectOfType<PlayerMovement>().gameObject;
+        }
+        
     }
 
     // Update is called once per frame
