@@ -77,7 +77,6 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.postprocessing": {
-<<<<<<< HEAD
       "version": "2.3.0",
       "depth": 0,
       "source": "registry",
@@ -89,14 +88,6 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-=======
-      "version": "3.2.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0"
-      },
->>>>>>> origin/Environment
       "url": "https://packages.unity.com"
     },
     "com.unity.render-pipelines.core": {
