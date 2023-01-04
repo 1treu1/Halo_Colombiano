@@ -60,6 +60,7 @@ public class IA : MonoBehaviour
     }
     public void FollowPlayer()
     {
+
         enemy.destination = player.transform.position;
     }
 }
