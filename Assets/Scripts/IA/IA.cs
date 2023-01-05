@@ -6,10 +6,14 @@ using UnityEngine.AI;
 public class IA : MonoBehaviour
 {
     // Start is called before the first frame update
+    public delegate void FollowAction();
+    public static event FollowAction OnFollow;
+    public delegate void NoFollowAction();
+    public static event NoFollowAction OnNoFollow;
     public NavMeshAgent enemy;
     public Transform[] nodo;
     private int index = 0;
-
+    public EnemyShoot enemyShoot;
     public bool followPlayer;
     private GameObject player;
     private float distanceToPlayer;
@@ -17,7 +21,8 @@ public class IA : MonoBehaviour
     public float distanceToFollowPath = 2;
     void Start()
     {
-        if(nodo == null  || nodo.Length == 0)
+
+        if (nodo == null  || nodo.Length == 0)
         {
             transform.gameObject.GetComponent<IA>().enabled = false;
         }
@@ -35,16 +40,19 @@ public class IA : MonoBehaviour
         distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         if(distanceToPlayer <= distanceToFollowPlayer && followPlayer)
         {
+            OnFollow();
             FollowPlayer();
         }
         else
         {
             EnemyPath();
+            
         }
     }
 
     public void EnemyPath()
     {
+        
         enemy.destination = nodo[index].position;
         if(Vector3.Distance(transform.position, nodo[index].position) <= distanceToFollowPath)
         {
@@ -60,7 +68,6 @@ public class IA : MonoBehaviour
     }
     public void FollowPlayer()
     {
-
         enemy.destination = player.transform.position;
     }
 }

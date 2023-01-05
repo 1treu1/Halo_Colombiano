@@ -15,9 +15,19 @@ public class Rotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotationEnemy();
+        //RotationEnemy();
     }
 
+    void OnEnable()
+    {
+        IA.OnFollow += RotationEnemy;
+    }
+
+
+    void OnDisable()
+    {
+        IA.OnFollow -= RotationEnemy;
+    }
     public void RotationEnemy()
     {
         float angleRadian = Mathf.Atan2(player.position.x - transform.position.x, player.position.z - transform.position.z);
