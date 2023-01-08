@@ -33,6 +33,11 @@ public class Grenade : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         foreach(var rangeObjects in colliders)
         {
+            IA ia = rangeObjects.GetComponent<IA>();
+            if(ia != null)
+            {
+                ia.GrenadeImpact();
+            }
             Rigidbody rb = rangeObjects.GetComponent<Rigidbody>();
             if(rb != null)
             {
@@ -43,4 +48,5 @@ public class Grenade : MonoBehaviour
         exploded = false;
         Destroy(gameObject);
     }
+
 }

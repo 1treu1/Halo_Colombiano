@@ -70,4 +70,8 @@ public class IA : MonoBehaviour
     {
         enemy.destination = player.transform.position;
     }
+    public void GrenadeImpact()
+    {
+        Destroy(gameObject);
+    }
 }
