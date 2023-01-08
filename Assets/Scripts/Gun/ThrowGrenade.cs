@@ -25,7 +25,7 @@ public class ThrowGrenade : MonoBehaviour
     public void Throw()
     {
         GameObject newGrenade = Instantiate(grenadePrefab , transform.position, transform.rotation);
-        newGrenade.GetComponent<Rigidbody>().AddForce(transform.up * throwForce);
+        newGrenade.GetComponent<Rigidbody>().AddForce(transform.forward * throwForce);
 
     }
 }

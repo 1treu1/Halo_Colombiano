@@ -6,7 +6,7 @@ public class WeaponSwitch : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject[] weapon;
-    int selectWeapon = 0;
+    public int selectWeapon = 0;
 
     void Start()
     {

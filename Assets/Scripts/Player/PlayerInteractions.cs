@@ -10,6 +10,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             
             GameManager.Instance.gunAmmo += other.gameObject.GetComponent<AmmoBox>().ammo;
+            GameManager.Instance.gunAmmo += other.gameObject.GetComponent<AmmoBox>().ammo1;
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("HealthBox"))

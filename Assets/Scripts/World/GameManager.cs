@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
         get;
         private set;
     }
-    public int gunAmmo = 10;
+    public int gunAmmo = 20;
+    public int gunAmmo1 = 10;
     public int health = 100;
     public int maxhealth = 100;
 

@@ -5,5 +5,6 @@ using UnityEngine;
 public class AmmoBox : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int ammo = 10;
+    public int ammo = 20;
+    public int ammo1 = 10;
 }
