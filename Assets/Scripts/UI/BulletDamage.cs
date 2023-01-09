@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    public int damage;
+    public float damage;
     public GameObject Player;
+    
 
     //cuando la bala choca con el personaje
     private void OnTriggerEnter(Collider other)
