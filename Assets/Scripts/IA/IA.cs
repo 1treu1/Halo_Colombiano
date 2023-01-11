@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class IA : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Animator animationEnemy;
     public delegate void FollowAction();
     public static event FollowAction OnFollow;
     public delegate void NoFollowAction();
@@ -19,6 +20,7 @@ public class IA : MonoBehaviour
     private float distanceToPlayer;
     public float distanceToFollowPlayer = 10;
     public float distanceToFollowPath = 2;
+    bool walkEnemy;
     void Start()
     {
 
@@ -42,9 +44,13 @@ public class IA : MonoBehaviour
         {
             OnFollow();
             FollowPlayer();
+            walkEnemy = true;
+            animationEnemy.SetBool("Run", walkEnemy);
         }
         else
         {
+            walkEnemy = false;
+            animationEnemy.SetBool("Run", walkEnemy);
             EnemyPath();
             
         }

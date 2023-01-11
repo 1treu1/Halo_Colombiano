@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletDamage : MonoBehaviour
 {
     public float damage;
-    public GameObject Player;
+    [SerializeField] public PlayerData Player;
     
 
     //cuando la bala choca con el personaje
@@ -13,7 +13,7 @@ public class BulletDamage : MonoBehaviour
     {
         if(other.tag=="Player")
         {
-            Player.GetComponent<PlayerData>().playerLife -= damage;
+            Player.playerLife -= damage;
         }
 
         if(other.tag == "Enemy")

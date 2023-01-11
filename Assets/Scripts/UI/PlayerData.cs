@@ -10,8 +10,8 @@ public class PlayerData : MonoBehaviour
     public Slider barLifePlayer;
     public TextMeshProUGUI lifeText;
 
-    public TMPro.TextMeshProUGUI bulletCounter;
-    private int amountOfBales = 0;//cantidad de balas
+    //public TMPro.TextMeshProUGUI bulletCounter;
+    //private int amountOfBales = 0;//cantidad de balas
 
     void Start()
     {
@@ -26,20 +26,26 @@ public class PlayerData : MonoBehaviour
         if (playerLife <= 0)
         {
             Debug.Log("Game Over");
+            playerLife = 0;
         }
          barLifePlayer.GetComponent<Slider>().value = playerLife;
 
         //se muestre la cantidad de balas
-        bulletCounter.text = amountOfBales.ToString();
+        //bulletCounter.text = amountOfBales.ToString();
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ammunition"))
+        if (other.tag == "EnemyBullet")
         {
-            Destroy(other.gameObject);
-         amountOfBales += 30;
-
+            if (playerLife <= 0)
+            {
+                playerLife = 0;
+            }
+            playerLife -= 25;
         }
+        
+
     }
 
 
