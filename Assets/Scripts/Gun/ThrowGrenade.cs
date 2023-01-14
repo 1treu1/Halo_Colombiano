@@ -6,7 +6,7 @@ public class ThrowGrenade : MonoBehaviour
 {
     public float throwForce = 500;
     public GameObject grenadePrefab;
-    
+
     // Start is called before the first frame update
     void Start()
     {

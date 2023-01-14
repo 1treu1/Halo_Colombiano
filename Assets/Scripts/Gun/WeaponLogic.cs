@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class WeaponLogic : MonoBehaviour
 {
@@ -12,21 +14,42 @@ public class WeaponLogic : MonoBehaviour
     private float shotRateTime = 0; //numero de balas disparadas
     public Camera cam;
     public WeaponSwitch weaponList;
+    public AudioSource audio;
+    public AudioClip audioShoot;
+    public AudioClip audioR;
+    public TextMeshProUGUI bulletCounter;
+    public TextMeshProUGUI allBullet;
 
-
+    private void Start()
+    {
+        DrawSight(cam.transform);
+    }
 
     void Update()
     {
+        if(weaponList.selectWeapon == 0)
+        {
+            allBullet.SetText(GameManager.Instance.gunMaxAmmo.ToString());
+        }
+        else
+        {
+            allBullet.SetText(GameManager.Instance.gunMaxAmmo1.ToString());
+        }
         Debug.Log(weaponList.selectWeapon);
         if (Input.GetButtonDown("Fire1")){
             Debug.Log("Fire");
+            
             if (Time.time > shotRateTime && weaponList.selectWeapon == 0)
             {
-                Debug.Log("1");
+                //Debug.Log("1");
                 if (GameManager.Instance.gunAmmo > 0)
                 {
-                    Debug.Log("Weapon 1");
+                    audio.PlayOneShot(audioShoot, 0.2f);
+                    //Debug.Log("Weapon 1");
+                    
+                    bulletCounter.SetText((GameManager.Instance.gunAmmo -1).ToString());
                     GameManager.Instance.gunAmmo--;
+
                     Shoot();
 
 
@@ -34,12 +57,16 @@ public class WeaponLogic : MonoBehaviour
             }
             if (Time.time > shotRateTime && weaponList.selectWeapon == 1)
             {
-                Debug.Log("2");
+                //Debug.Log("2");
                 if (GameManager.Instance.gunAmmo1 > 0)
                 {
-                    Debug.Log("Weapon 2");
+                    audio.PlayOneShot(audioShoot, 0.3f);
+                    //Debug.Log("Weapon 2");
+                    
+                    bulletCounter.SetText((GameManager.Instance.gunAmmo1-1).ToString());
                     GameManager.Instance.gunAmmo1--;
                     Shoot();
+                    audio.PlayOneShot(audioR, 0.1f);
 
                 }
             }

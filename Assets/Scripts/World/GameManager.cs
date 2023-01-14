@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance
@@ -10,9 +13,13 @@ public class GameManager : MonoBehaviour
         private set;
     }
     public int gunAmmo = 20;
+    public int gunMaxAmmo = 20;
     public int gunAmmo1 = 10;
+    public int gunMaxAmmo1 = 10;
     public int health = 100;
     public int maxhealth = 100;
+
+
 
     private void Awake()
     {

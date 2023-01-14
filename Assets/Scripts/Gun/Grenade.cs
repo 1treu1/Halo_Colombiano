@@ -10,6 +10,9 @@ public class Grenade : MonoBehaviour
     public float explosionForce = 70;
     bool exploded = false;
     public GameObject explosionEffect;
+    public AudioSource audio;
+    public AudioClip soundCollision;
+    public AudioClip soundGrenade;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,8 @@ public class Grenade : MonoBehaviour
         {
             Explode();
             exploded = true;
+            audio.PlayOneShot(soundGrenade);
+            Debug.Log("Exploded");
         }
     }
     void Explode()
@@ -42,11 +47,19 @@ public class Grenade : MonoBehaviour
             if(rb != null)
             {
                 rb.AddExplosionForce(explosionForce * 10, transform.position, radius);
-                
             }
         }
         exploded = false;
-        Destroy(gameObject);
+        Destroy(gameObject, 0.8f);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Ground"))
+        {
+            
+            audio.PlayOneShot(soundCollision);
+        }
+    }
+  
 }

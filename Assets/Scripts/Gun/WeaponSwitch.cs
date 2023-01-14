@@ -7,10 +7,12 @@ public class WeaponSwitch : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] weapon;
     public int selectWeapon = 0;
-    
+    public Scope statusSight;
+
     void Start()
     {
         SelectWeapon();
+        
         
     }
 
@@ -19,7 +21,7 @@ public class WeaponSwitch : MonoBehaviour
     {
    
         int previusWeapon = selectWeapon;
-        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        if(Input.GetAxis("Mouse ScrollWheel") > 0 &&  statusSight.isScoped == false)
         {
             if(selectWeapon >= weapon.Length - 1)
             {
@@ -31,7 +33,7 @@ public class WeaponSwitch : MonoBehaviour
                    
             }
         }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && statusSight.isScoped == false)
         {
             if (selectWeapon <= 0)
             {
@@ -57,7 +59,7 @@ public class WeaponSwitch : MonoBehaviour
         {
             if(weapon.gameObject.layer == LayerMask.NameToLayer("Weapon"))
             {
-                if(i == selectWeapon)
+                if(i == selectWeapon && statusSight.isScoped == false)
                 {
                     weapon.gameObject.SetActive(true);
                 }

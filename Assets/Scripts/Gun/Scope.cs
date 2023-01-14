@@ -6,13 +6,14 @@ public class Scope : MonoBehaviour
 {
     
     public Animator animator;
-    private bool isScoped = false;
+    public bool isScoped = false;
     public GameObject scopeOverlay;
     public GameObject weaponCamara;
     public GameObject[] rifleChildren;
     private GameObject sniperBody;
     private GameObject sniperScope;
     public GameObject rifle;
+    
 
     // Update is called once per frame
     private void Start()
@@ -43,13 +44,15 @@ public class Scope : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
         scopeOverlay.SetActive(true);
+        
         //weaponCamara.SetActive(false);
         sniperBody.SetActive(false);
 
     }
     void OnUnScoped()
     {
-        scopeOverlay.SetActive(false);  
+        scopeOverlay.SetActive(false);
+        
         //weaponCamara.SetActive(true);  
         sniperBody.SetActive(true);  
     }

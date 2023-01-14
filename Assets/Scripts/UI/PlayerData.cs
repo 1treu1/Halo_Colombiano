@@ -10,6 +10,7 @@ public class PlayerData : MonoBehaviour
     public Slider barLifePlayer;
     public TextMeshProUGUI lifeText;
 
+
     //public TMPro.TextMeshProUGUI bulletCounter;
     //private int amountOfBales = 0;//cantidad de balas
 
