@@ -44,7 +44,19 @@ public class PlayerData : MonoBehaviour
             }
             playerLife -= 25;
         }
-        
+        if (other.tag == "HealthBox")
+        {
+            if (playerLife >= 100)
+            {
+                playerLife = 10;
+            }
+            else
+            {
+                playerLife += 60;
+            }
+           
+        }
+
 
     }
 

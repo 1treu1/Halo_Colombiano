@@ -7,15 +7,17 @@ public class WeaponSwitch : MonoBehaviour
     // Start is called before the first frame update
     public GameObject[] weapon;
     public int selectWeapon = 0;
-
+    
     void Start()
     {
         SelectWeapon();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+   
         int previusWeapon = selectWeapon;
         if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {

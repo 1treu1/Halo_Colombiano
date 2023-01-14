@@ -192,6 +192,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
+      propertyPath: followPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
       propertyPath: nodo.Array.data[0]
       value: 
       objectReference: {fileID: 505899344}
@@ -789,6 +794,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 269333715}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &393716796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2842415780378615146, guid: 5abace0cd40503d46ab16a0f2cbca967,
+    type: 3}
+  m_PrefabInstance: {fileID: 688793652376312374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &397086895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -800,6 +811,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Npc (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
+      propertyPath: followPlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
@@ -897,6 +913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
+      propertyPath: followPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
       propertyPath: nodo.Array.data[0]
       value: 
       objectReference: {fileID: 505899344}
@@ -988,6 +1009,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Npc (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
+      propertyPath: followPlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
@@ -1661,6 +1687,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
+      propertyPath: followPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
       propertyPath: nodo.Array.data[0]
       value: 
       objectReference: {fileID: 505899344}
@@ -1866,6 +1897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Npc (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
+      propertyPath: followPlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
@@ -2453,6 +2489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Npc (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
+      propertyPath: followPlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
@@ -3368,6 +3409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Npc (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
+      propertyPath: followPlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
@@ -4407,13 +4453,28 @@ PrefabInstance:
     - target: {fileID: 688793651689849324, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 735279262841076710, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: punteroRadar
       value: 
       objectReference: {fileID: 148294882}
+    - target: {fileID: 1321586322154810918, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: rifle
+      value: 
+      objectReference: {fileID: 393716796}
+    - target: {fileID: 1321586322154810918, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: scope.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321586322154810918, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: scope.Array.data[0]
+      value: 
+      objectReference: {fileID: 393716796}
     - target: {fileID: 1321586322154810932, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_IsActive
@@ -4442,12 +4503,17 @@ PrefabInstance:
     - target: {fileID: 1321586322154810937, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 1847
+      value: 3895
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321586322564473036, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 1321586322564756510, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321586322774775750, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
@@ -4536,18 +4602,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2842415780378615145, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
+      propertyPath: rifle
+      value: 
+      objectReference: {fileID: 393716796}
+    - target: {fileID: 2842415780378615145, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
       propertyPath: scopeOverlay
       value: 
       objectReference: {fileID: 1600549846}
     - target: {fileID: 2842415780378615146, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3521900667682402967, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729176987394839942, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: throwForce
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abace0cd40503d46ab16a0f2cbca967, type: 3}
@@ -4706,6 +4782,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Npc
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
+        type: 3}
+      propertyPath: followPlayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2998040736954918559, guid: 1f666004bdd518d43856c5d5ef3782be,
         type: 3}
