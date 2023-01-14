@@ -4377,17 +4377,27 @@ PrefabInstance:
     - target: {fileID: 688793651689849322, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_RendererIndex
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 688793651689849322, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 688793651689849322, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: m_RequiresDepthTextureOption
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 688793651689849322, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: m_VolumeFrameworkUpdateModeOption
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 688793651689849323, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_ClearFlags
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 688793651689849323, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
@@ -4411,12 +4421,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1321586322154810935, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321586322154810935, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
       propertyPath: m_RequiresDepthTextureOption
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321586322154810935, guid: 5abace0cd40503d46ab16a0f2cbca967,
         type: 3}
       propertyPath: m_RequiresOpaqueTextureOption
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321586322154810937, guid: 5abace0cd40503d46ab16a0f2cbca967,
+        type: 3}
+      propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321586322154810937, guid: 5abace0cd40503d46ab16a0f2cbca967,
