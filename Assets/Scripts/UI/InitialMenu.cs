@@ -11,6 +11,14 @@ public class InitialMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void Back()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Game()
+    {
+        Time.timeScale = 1;
+    }
     //Funcion para salir del juego 
 
     public void Exit()

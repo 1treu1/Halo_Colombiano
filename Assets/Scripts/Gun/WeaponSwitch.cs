@@ -8,6 +8,7 @@ public class WeaponSwitch : MonoBehaviour
     public GameObject[] weapon;
     public int selectWeapon = 0;
     public Scope statusSight;
+    
 
     void Start()
     {
