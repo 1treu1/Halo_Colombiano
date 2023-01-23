@@ -47,8 +47,8 @@ public class Grenade1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hola "+other);
-        if (other.CompareTag("Player"))
+     
+        if (other.CompareTag("Player") || other.CompareTag("Bullet"))
         {
             exploded = true;
             audio.PlayOneShot(soundGrenade);

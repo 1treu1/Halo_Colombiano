@@ -42,6 +42,7 @@ public class PlayerData : MonoBehaviour
             if (playerLife <= 0)
             {
                 playerLife = 0;
+
             }
             playerLife -= 25;
         }

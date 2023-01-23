@@ -50,7 +50,7 @@ public class WeaponLogic : MonoBehaviour
                     bulletCounter.SetText((GameManager.Instance.gunAmmo -1).ToString());
                     GameManager.Instance.gunAmmo--;
 
-                    Shoot();
+                    Shoot(0);
 
 
                 }
@@ -65,7 +65,7 @@ public class WeaponLogic : MonoBehaviour
                     
                     bulletCounter.SetText((GameManager.Instance.gunAmmo1-1).ToString());
                     GameManager.Instance.gunAmmo1--;
-                    Shoot();
+                    Shoot(1);
                     audio.PlayOneShot(audioR, 0.1f);
 
                 }
@@ -73,7 +73,7 @@ public class WeaponLogic : MonoBehaviour
 
         }
     }
-    void Shoot()
+    void Shoot(int i)
     {
         DrawSight(cam.transform);
         GameObject newBullet;
@@ -83,8 +83,12 @@ public class WeaponLogic : MonoBehaviour
         newBullet.GetComponent<Rigidbody>().AddForce(spawnShot.forward * shotForce); //Dispara las balas
         newFlash.GetComponent<Rigidbody>().AddForce(spawnShot.forward * shotForce); //Dispara las balas
         shotRateTime = Time.time + shotRate;
+        if(i==0)
+            Destroy(newFlash, 0.02f);
+        else
+            Destroy(newFlash, 2f);
         Destroy(newBullet, 5f);
-        Destroy(newFlash, 2f);
+        
     }
     public void DrawSight(Transform camera)
     {

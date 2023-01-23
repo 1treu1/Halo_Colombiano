@@ -10,18 +10,23 @@ public class MouseCamera : MonoBehaviour
     public float speed = 1;
     public GameObject mover;
     
+    
+    
+        
     private void Start()
     {
         Cursor.lockState = CursorLockMode. Locked;
     }
+
+    
     
     private void Update()
     {
         turn.x += Input.GetAxis ("Mouse X") * sensitivity;
-        turn.y += Input.GetAxis ( "Mouse Y") * sensitivity;
-        mover.transform.localRotation = Quaternion . Euler (-turn.y, 45, 45);
-        transform. localRotation = Quaternion . Euler (0, turn.x, 0);
-        deltaMove = new Vector3(Input.GetAxisRaw("Vertical"), 0, Input.GetAxisRaw("Horizontal")) * speed * Time.deltaTime;
+        turn.y -= Input.GetAxis ( "Mouse Y") * sensitivity;
+        mover.transform.localRotation = Quaternion . Euler (0, 0, -turn.y);
+        turn.y = Mathf.Clamp(turn.y, -45, 4);
+        //transform. localRotation = Quaternion . Euler (0, turn.x, 0);
     }
-    
+
 }    

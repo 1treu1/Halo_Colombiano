@@ -52,6 +52,7 @@ public class IA : MonoBehaviour
             walkEnemy = false;
             animationEnemy.SetBool("Run", walkEnemy);
             EnemyPath();
+            OnNoFollow();
             
         }
     }
