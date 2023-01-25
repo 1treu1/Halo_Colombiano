@@ -6,10 +6,10 @@ public class FireTrail : MonoBehaviour
 {
     [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private Vector2 _durationRange = new Vector2(5, 10);
-    [SerializeField] private float _destroyDelay = 1f;
+    [SerializeField] private float _destroyDelay = 0.5f;
 
-    private float _duration = 0f;
-    private float _destroyTimer = 0f;
+    private float _duration = 1f;
+    private float _destroyTimer = 1f;
     
     // Start is called before the first frame update
     void Start()

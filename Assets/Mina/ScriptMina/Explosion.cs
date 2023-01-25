@@ -14,6 +14,9 @@ public class Explosion : MonoBehaviour
     public float _MaxExplosionForce;
     public float _MinimumExplosionForce;
 
+    public AudioSource controlSonido;
+    public AudioClip sonidoExplosion;
+
     [SerializeField] private ParticleSystem _explosionParticleSysem;
     [SerializeField] private FireTrail _explosionFireTrail;
 
@@ -58,12 +61,14 @@ public class Explosion : MonoBehaviour
     public void Trigger()
     {
         if(_bWasTriggered && _bTriggerOnce)
-            return;
+        return;
+          
+            OnExplosionTriggerEvent?.Invoke();
 
-        OnExplosionTriggerEvent?.Invoke();
+            _explosionParticleSysem.Play();
 
-        _explosionParticleSysem.Play();
-
+            controlSonido.PlayOneShot(sonidoExplosion);
+            
 
         _RecentHits.Clear();
         Collider[] colliders = Physics.OverlapSphere(transform.position, _ExplosionRadius);

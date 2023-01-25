@@ -54,6 +54,7 @@ public class Grenade1 : MonoBehaviour
             audio.PlayOneShot(soundGrenade);
             Debug.Log("Exploded");
             Explode();
+            Destroy(other.gameObject, 0.5f);
         }
     }
   

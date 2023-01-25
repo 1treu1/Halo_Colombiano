@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public float power = 200f;
-    public float lifeTime = 5f;
+    public float power = 100f;
+    public float lifeTime = 2f;
     float deltatime = 0f;
 
     Rigidbody bulletRb;
@@ -24,5 +24,7 @@ public class BulletController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+       
+        
     }
 }

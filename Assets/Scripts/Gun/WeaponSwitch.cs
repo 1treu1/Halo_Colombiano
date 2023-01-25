@@ -13,44 +13,43 @@ public class WeaponSwitch : MonoBehaviour
     void Start()
     {
         SelectWeapon();
-        
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.isGun) { 
    
-        int previusWeapon = selectWeapon;
-        if(Input.GetAxis("Mouse ScrollWheel") > 0 &&  statusSight.isScoped == false)
-        {
-            if(selectWeapon >= weapon.Length - 1)
+            int previusWeapon = selectWeapon;
+            if(Input.GetAxis("Mouse ScrollWheel") > 0 &&  statusSight.isScoped == false)
             {
-                selectWeapon = 0;
-            }
-            else
-            {
-                selectWeapon++;
+                if(selectWeapon >= weapon.Length - 1)
+                {
+                    selectWeapon = 0;
+                }
+                else
+                {
+                    selectWeapon++;
                    
+                }
             }
-        }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && statusSight.isScoped == false)
-        {
-            if (selectWeapon <= 0)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0 && statusSight.isScoped == false)
             {
-                selectWeapon = weapon.Length-1;
-            }
-            else
-            {
-                selectWeapon--;
+                if (selectWeapon <= 0)
+                {
+                    selectWeapon = weapon.Length-1;
+                }
+                else
+                {
+                    selectWeapon--;
                     
+                }
+            }
+            if(previusWeapon != selectWeapon)
+            {
+                SelectWeapon();
             }
         }
-        if(previusWeapon != selectWeapon)
-        {
-            SelectWeapon();
-        }
-
     }
 
     void SelectWeapon()

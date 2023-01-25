@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour
 {
     public float playerLife = 100;
     public Slider barLifePlayer;
     public TextMeshProUGUI lifeText;
+    public int counterHealth = 0;
 
 
     //public TMPro.TextMeshProUGUI bulletCounter;
@@ -30,7 +32,12 @@ public class PlayerData : MonoBehaviour
             playerLife = 0;
         }
          barLifePlayer.GetComponent<Slider>().value = playerLife;
-
+        if(Input.GetKeyDown(KeyCode.Q) && counterHealth >= 0)
+        {
+            playerLife += 60;
+            counterHealth -= 1;
+        }
+            
         //se muestre la cantidad de balas
         //bulletCounter.text = amountOfBales.ToString();
     }
@@ -42,6 +49,8 @@ public class PlayerData : MonoBehaviour
             if (playerLife <= 0)
             {
                 playerLife = 0;
+                SceneManager.LoadScene(0);
+                Destroy(gameObject, 0.5f);
 
             }
             playerLife -= 25;
@@ -50,7 +59,8 @@ public class PlayerData : MonoBehaviour
         {
             if (playerLife >= 100)
             {
-                playerLife = 10;
+                playerLife = 100;
+                counterHealth += 1;
             }
             else
             {

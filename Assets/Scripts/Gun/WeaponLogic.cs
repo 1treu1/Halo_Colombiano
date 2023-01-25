@@ -19,15 +19,17 @@ public class WeaponLogic : MonoBehaviour
     public AudioClip audioR;
     public TextMeshProUGUI bulletCounter;
     public TextMeshProUGUI allBullet;
+    public Animator animator;
 
     private void Start()
     {
         DrawSight(cam.transform);
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if(weaponList.selectWeapon == 0)
+        if (weaponList.selectWeapon == 0)
         {
             allBullet.SetText(GameManager.Instance.gunMaxAmmo.ToString());
         }
@@ -36,9 +38,10 @@ public class WeaponLogic : MonoBehaviour
             allBullet.SetText(GameManager.Instance.gunMaxAmmo1.ToString());
         }
         Debug.Log(weaponList.selectWeapon);
-        if (Input.GetButtonDown("Fire1")){
+        if (Input.GetButtonDown("Fire1")) {
             Debug.Log("Fire");
-            
+
+
             if (Time.time > shotRateTime && weaponList.selectWeapon == 0)
             {
                 //Debug.Log("1");
@@ -46,11 +49,14 @@ public class WeaponLogic : MonoBehaviour
                 {
                     audio.PlayOneShot(audioShoot, 0.2f);
                     //Debug.Log("Weapon 1");
-                    
-                    bulletCounter.SetText((GameManager.Instance.gunAmmo -1).ToString());
+
+                    bulletCounter.SetText((GameManager.Instance.gunAmmo - 1).ToString());
                     GameManager.Instance.gunAmmo--;
 
                     Shoot(0);
+                    animator.SetBool("Shoot", true);
+                    StartCoroutine("Wait");
+                    
 
 
                 }
@@ -62,16 +68,19 @@ public class WeaponLogic : MonoBehaviour
                 {
                     audio.PlayOneShot(audioShoot, 0.3f);
                     //Debug.Log("Weapon 2");
-                    
-                    bulletCounter.SetText((GameManager.Instance.gunAmmo1-1).ToString());
+
+                    bulletCounter.SetText((GameManager.Instance.gunAmmo1 - 1).ToString());
                     GameManager.Instance.gunAmmo1--;
                     Shoot(1);
                     audio.PlayOneShot(audioR, 0.1f);
+                    //StartCoroutine("Wait");
 
                 }
             }
 
         }
+
+
     }
     void Shoot(int i)
     {
@@ -82,18 +91,19 @@ public class WeaponLogic : MonoBehaviour
         newFlash = Instantiate(flashPrefab, spawnShot.position, spawnShot.rotation);
         newBullet.GetComponent<Rigidbody>().AddForce(spawnShot.forward * shotForce); //Dispara las balas
         newFlash.GetComponent<Rigidbody>().AddForce(spawnShot.forward * shotForce); //Dispara las balas
+       
         shotRateTime = Time.time + shotRate;
-        if(i==0)
+        if (i == 0)
             Destroy(newFlash, 0.02f);
         else
             Destroy(newFlash, 2f);
         Destroy(newBullet, 5f);
-        
+
     }
     public void DrawSight(Transform camera)
     {
         RaycastHit hit;
-        if(Physics.Raycast(camera.position, camera.forward, out hit))
+        if (Physics.Raycast(camera.position, camera.forward, out hit))
         {
             spawnShot.LookAt(hit.point);
         }
@@ -102,5 +112,10 @@ public class WeaponLogic : MonoBehaviour
             Vector3 end = camera.position + camera.forward;
             spawnShot.LookAt(end);
         }
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("Shoot", false);
     }
 }

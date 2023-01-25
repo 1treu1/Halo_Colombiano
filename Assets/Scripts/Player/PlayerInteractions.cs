@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("GunAmmo"))
@@ -11,6 +12,10 @@ public class PlayerInteractions : MonoBehaviour
             
             GameManager.Instance.gunAmmo += other.gameObject.GetComponent<AmmoBox>().ammo;
             GameManager.Instance.gunAmmo1 += other.gameObject.GetComponent<AmmoBox>().ammo1;
+            if (GameManager.Instance.gunAmmo > GameManager.Instance.gunMaxAmmo)
+                GameManager.Instance.gunMaxAmmo = GameManager.Instance.gunAmmo;
+            if (GameManager.Instance.gunAmmo1 > GameManager.Instance.gunMaxAmmo1)
+                GameManager.Instance.gunMaxAmmo1 = GameManager.Instance.gunAmmo1;
             Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("HealthBox"))
