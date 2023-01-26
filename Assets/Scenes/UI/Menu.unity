@@ -851,6 +851,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasCredits
       objectReference: {fileID: 0}
+    - target: {fileID: 6424385587135336977, guid: 0585158add8d8b149b9db920ba4d09bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0585158add8d8b149b9db920ba4d09bb, type: 3}
 --- !u!1 &8089840651055117485 stripped
